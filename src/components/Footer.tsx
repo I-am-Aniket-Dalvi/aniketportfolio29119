@@ -5,7 +5,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-accent text-accent-foreground py-12 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-primary text-primary-foreground py-12 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto">
         <div className="grid md:grid-cols-3 gap-8 items-center">
           {/* Branding */}
@@ -22,26 +22,26 @@ const Footer = () => {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-lg bg-muted/20 hover:bg-primary hover:text-primary-foreground flex items-center justify-center smooth-transition"
+              className="w-10 h-10 rounded-lg bg-secondary hover:bg-accent flex items-center justify-center smooth-transition shadow-lg"
               aria-label="LinkedIn"
             >
-              <Linkedin className="w-5 h-5" />
+              <Linkedin className="w-5 h-5 text-white" />
             </a>
             <a
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-lg bg-muted/20 hover:bg-primary hover:text-primary-foreground flex items-center justify-center smooth-transition"
+              className="w-10 h-10 rounded-lg bg-secondary hover:bg-accent flex items-center justify-center smooth-transition shadow-lg"
               aria-label="Facebook"
             >
-              <Facebook className="w-5 h-5" />
+              <Facebook className="w-5 h-5 text-white" />
             </a>
           </div>
 
           {/* Download Resume */}
           <div className="flex justify-end">
             <Button 
-              variant="secondary" 
+              variant="hero" 
               size="lg"
               asChild
             >
@@ -56,7 +56,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="mt-8 pt-8 border-t border-muted/20 text-center">
           <p className="text-sm text-muted opacity-60 flex items-center justify-center gap-2">
-            © {currentYear} Aniket Dalvi. Crafted with <Heart className="w-4 h-4 text-red-500" /> and passion
+            © {currentYear} Aniket Dalvi. Crafted with <Heart className="w-4 h-4 text-accent" /> and passion
           </p>
         </div>
       </div>

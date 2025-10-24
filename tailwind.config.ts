@@ -91,8 +91,8 @@ export default {
           to: { transform: "scale(1)", opacity: "1" },
         },
         glow: {
-          "0%, 100%": { boxShadow: "0 0 20px hsl(16 100% 50% / 0.3)" },
-          "50%": { boxShadow: "0 0 40px hsl(16 100% 60% / 0.5)" },
+          "0%, 100%": { boxShadow: "0 0 20px hsl(208 80% 74% / 0.3)" },
+          "50%": { boxShadow: "0 0 40px hsl(208 80% 74% / 0.5)" },
         },
       },
       animation: {
@@ -102,6 +102,7 @@ export default {
         "fade-in-up": "fade-in-up 0.6s ease-out forwards",
         "scale-in": "scale-in 0.3s ease-out",
         glow: "glow 2s ease-in-out infinite",
+        pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
     },
   },

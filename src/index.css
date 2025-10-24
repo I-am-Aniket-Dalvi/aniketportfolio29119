@@ -8,53 +8,50 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Aniket's Portfolio Custom Color Palette */
-    --background: 0 0% 98%;
-    --foreground: 73 30% 14%; /* #3D4127 */
+    /* New Color Palette from Image */
+    --background: 210 25% 98%;
+    --foreground: 210 30% 20%; /* #384959 dark */
 
-    --card: 0 0% 100%;
-    --card-foreground: 73 30% 14%;
+    --card: 208 100% 97%;
+    --card-foreground: 210 30% 20%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 73 30% 14%;
+    --popover: 208 100% 97%;
+    --popover-foreground: 210 30% 20%;
 
-    /* Primary: Dark Olive #636B2F */
-    --primary: 65 40% 30%;
-    --primary-foreground: 0 0% 98%;
+    /* Primary: Dark Blue #384959 */
+    --primary: 210 30% 28%;
+    --primary-foreground: 208 100% 97%;
 
-    /* Secondary: Sage #BAC095 */
-    --secondary: 64 26% 67%;
-    --secondary-foreground: 73 30% 14%;
+    /* Secondary: Slate Blue #6A89A7 */
+    --secondary: 208 26% 55%;
+    --secondary-foreground: 208 100% 97%;
 
-    /* Muted: Light Lime #D4DE95 */
-    --muted: 67 53% 72%;
-    --muted-foreground: 73 30% 14%;
+    /* Muted: Light Blue #BDDDFC */
+    --muted: 208 100% 87%;
+    --muted-foreground: 210 30% 28%;
 
-    /* Accent: Darker Olive #3D4127 */
-    --accent: 73 30% 14%;
-    --accent-foreground: 67 53% 72%;
-
-    /* Fire Orange Glow */
-    --fire-orange: 16 100% 50%;
-    --fire-glow: 16 100% 60%;
+    /* Accent: Medium Blue #88BDF2 */
+    --accent: 208 80% 74%;
+    --accent-foreground: 210 30% 20%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 208 100% 97%;
 
-    --border: 64 26% 67%;
-    --input: 64 26% 67%;
-    --ring: 65 40% 30%;
+    --border: 208 80% 74%;
+    --input: 208 100% 87%;
+    --ring: 210 30% 28%;
 
     --radius: 1rem;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(73, 30%, 14%) 0%, hsl(65, 40%, 30%) 50%, hsl(64, 26%, 67%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(67, 53%, 72%, 0.1) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(210, 30%, 28%) 0%, hsl(208, 26%, 55%) 50%, hsl(208, 80%, 74%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(208, 100%, 97%) 0%, hsl(208, 100%, 87%, 0.3) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(208, 80%, 74%) 0%, hsl(208, 100%, 87%) 100%);
     
     /* Shadows */
-    --shadow-glow: 0 0 40px hsl(var(--fire-orange) / 0.3);
-    --shadow-card: 0 10px 30px -10px hsl(73, 30%, 14% / 0.2);
-    --shadow-elevated: 0 20px 60px -15px hsl(73, 30%, 14% / 0.3);
+    --shadow-card: 0 10px 40px -10px hsl(210, 30%, 28% / 0.15);
+    --shadow-elevated: 0 20px 60px -15px hsl(210, 30%, 28% / 0.25);
+    --shadow-glow: 0 0 40px hsl(208, 80%, 74% / 0.4);
 
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -79,10 +76,6 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
-  .fire-glow {
-    box-shadow: var(--shadow-glow);
-  }
-
   .smooth-transition {
     transition: var(--transition-smooth);
   }
@@ -92,7 +85,7 @@ All colors MUST be HSL.
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--fire-orange)));
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -121,5 +114,11 @@ All colors MUST be HSL.
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  .glassmorphism {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 }
