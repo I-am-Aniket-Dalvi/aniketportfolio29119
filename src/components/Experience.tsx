@@ -37,23 +37,32 @@ const Experience = () => {
     },
     {
       role: "Information Technology Support Engineer",
-      company: "YMS Consulting Engineers",
-      period: "Jul 2019 - Aug 2021",
+      company: "Megha Compusoft",
+      period: "Feb 2019 - Aug 2021",
       type: "Full-time",
       gradient: "from-secondary to-accent",
       achievements: [
         {
-          problem: "Slow and outdated legacy systems",
-          solution: "Optimized and upgraded hardware and software infrastructure",
-          result: "Enhanced operational efficiency across the organization"
+          problem: "Inefficient IT operations and connectivity issues",
+          solution: "Enhanced IT efficiency by resolving connectivity and SAP-related issues promptly",
+          result: "Successfully streamlined user account management across Windows Server and Microsoft Azure environments"
+        },
+        {
+          problem: "Limited IT infrastructure scalability and flexibility",
+          solution: "Supported virtualization platforms such as VMware, Microsoft Virtual PC, and Oracle VM VirtualBox",
+          result: "Improved IT infrastructure scalability and flexibility"
         }
       ],
       responsibilities: [
-        "Troubleshot and resolved hardware, software, and network-related issues",
-        "Configured and maintained IP surveillance systems and access control",
-        "Managed printer and scanner setups, ensuring optimal performance",
-        "Provided end-user support for desktop applications and network connectivity",
-        "Assisted in deployment and configuration of enterprise software solutions"
+        "Provided day-to-day technical support for hardware, software, and network systems in a multi-user environment",
+        "Installed and configured virtualization platforms such as VMware, Microsoft Virtual PC, and Oracle VM VirtualBox",
+        "Configured and maintained network devices, including CISCO routers, switches, and D-Link routers",
+        "Managed Microsoft Admin Dashboard, handling user account creation, deletion, and permission management",
+        "Configured and supported Microsoft Outlook for email accounts, resolving access and configuration issues",
+        "Diagnosed and resolved issues related to network connectivity, printer configurations, and user security settings",
+        "Administered email distribution lists, user accounts, and email groups",
+        "Assisted in SAP troubleshooting, providing tailored technical solutions to business users",
+        "Delivered IT support for GSCALTEX INDIA Pvt. Ltd. at a residential site"
       ]
     }
   ];
