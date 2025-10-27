@@ -19,7 +19,7 @@ const Footer = () => {
           {/* Social Links */}
           <div className="flex justify-center gap-4">
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/aniket-dalvi-9bb4b5190"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-lg bg-secondary hover:bg-accent flex items-center justify-center smooth-transition shadow-lg"
@@ -28,7 +28,7 @@ const Footer = () => {
               <Linkedin className="w-5 h-5 text-white" />
             </a>
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/aniket.dalvi.982"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-lg bg-secondary hover:bg-accent flex items-center justify-center smooth-transition shadow-lg"
@@ -39,7 +39,7 @@ const Footer = () => {
           </div>
 
           {/* Download Resume */}
-          <div className="flex justify-end">
+          <div className="flex justify-center md:justify-end">
             <Button 
               variant="hero" 
               size="lg"

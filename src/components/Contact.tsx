@@ -54,24 +54,24 @@ const Contact = () => {
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/aniket-dalvi-9bb4b5190",
       gradient: "from-primary to-secondary"
     },
     {
       icon: Facebook,
       label: "Facebook",
-      href: "https://facebook.com",
+      href: "https://www.facebook.com/aniket.dalvi.982",
       gradient: "from-secondary to-accent"
     }
   ];
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-muted/20">
+    <section id="contact" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto">
-        <div className="text-center mb-16 fade-in-up">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 gradient-text">Let's Connect</h2>
+        <div className="text-center mb-12 sm:mb-16 fade-in-up">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 gradient-text">Let's Connect</h2>
           <div className="h-1 w-24 bg-gradient-to-r from-accent to-muted rounded-full mx-auto mb-6" />
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto px-4">
             Ready to transform your IT infrastructure? Let's discuss how I can help
           </p>
         </div>

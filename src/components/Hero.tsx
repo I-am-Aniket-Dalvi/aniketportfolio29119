@@ -57,39 +57,39 @@ const Hero = () => {
             </div>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-3 gap-6 pt-8">
+            <div className="grid grid-cols-3 gap-3 sm:gap-6 pt-8">
               <div className="relative group">
                 <div className="absolute inset-0 bg-accent/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
-                <div className="relative bg-card/10 backdrop-blur-sm border border-muted/20 rounded-2xl p-4 hover:border-accent/50 transition-all">
-                  <Award className="w-6 h-6 text-accent mb-2" />
-                  <p className="text-3xl font-bold">5+</p>
-                  <p className="text-xs text-muted">Years Exp.</p>
+                <div className="relative bg-card/10 backdrop-blur-sm border border-muted/20 rounded-2xl p-3 sm:p-4 hover:border-accent/50 transition-all">
+                  <Award className="w-5 h-5 sm:w-6 sm:h-6 text-accent mb-2" />
+                  <p className="text-2xl sm:text-3xl font-bold">5+</p>
+                  <p className="text-[10px] sm:text-xs text-muted">Years Exp.</p>
                 </div>
               </div>
               
               <div className="relative group">
                 <div className="absolute inset-0 bg-accent/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
-                <div className="relative bg-card/10 backdrop-blur-sm border border-muted/20 rounded-2xl p-4 hover:border-accent/50 transition-all">
-                  <TrendingUp className="w-6 h-6 text-accent mb-2" />
-                  <p className="text-3xl font-bold">30%</p>
-                  <p className="text-xs text-muted">Less Downtime</p>
+                <div className="relative bg-card/10 backdrop-blur-sm border border-muted/20 rounded-2xl p-3 sm:p-4 hover:border-accent/50 transition-all">
+                  <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-accent mb-2" />
+                  <p className="text-2xl sm:text-3xl font-bold">30%</p>
+                  <p className="text-[10px] sm:text-xs text-muted">Less Downtime</p>
                 </div>
               </div>
               
               <div className="relative group">
                 <div className="absolute inset-0 bg-accent/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
-                <div className="relative bg-card/10 backdrop-blur-sm border border-muted/20 rounded-2xl p-4 hover:border-accent/50 transition-all">
-                  <Users className="w-6 h-6 text-accent mb-2" />
-                  <p className="text-3xl font-bold">100+</p>
-                  <p className="text-xs text-muted">Systems</p>
+                <div className="relative bg-card/10 backdrop-blur-sm border border-muted/20 rounded-2xl p-3 sm:p-4 hover:border-accent/50 transition-all">
+                  <Users className="w-5 h-5 sm:w-6 sm:h-6 text-accent mb-2" />
+                  <p className="text-2xl sm:text-3xl font-bold">100+</p>
+                  <p className="text-[10px] sm:text-xs text-muted">Systems</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Smaller Profile Image */}
-          <div className="relative fade-in-up flex justify-center lg:justify-end" style={{ animationDelay: "0.2s" }}>
-            <div className="relative w-64 sm:w-80 lg:w-96">
+          <div className="relative fade-in-up flex justify-center lg:justify-end mt-8 lg:mt-0" style={{ animationDelay: "0.2s" }}>
+            <div className="relative w-56 sm:w-72 lg:w-80 xl:w-96">
               {/* Glow Effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-accent to-muted rounded-3xl blur-3xl opacity-40 animate-pulse" />
               
@@ -103,10 +103,10 @@ const Hero = () => {
               </div>
 
               {/* Availability Badge */}
-              <div className="absolute -bottom-4 -right-4 bg-card rounded-2xl p-4 shadow-2xl border-2 border-accent/30 animate-float backdrop-blur-sm">
+              <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 bg-card rounded-2xl p-3 sm:p-4 shadow-2xl border-2 border-accent/30 animate-float backdrop-blur-sm">
                 <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                  <p className="font-semibold text-card-foreground text-sm">Available</p>
+                  <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-green-500 rounded-full animate-pulse" />
+                  <p className="font-semibold text-card-foreground text-xs sm:text-sm">Available</p>
                 </div>
               </div>
             </div>
