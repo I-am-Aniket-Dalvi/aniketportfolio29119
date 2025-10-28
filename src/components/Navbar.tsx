@@ -60,8 +60,8 @@ const Navbar = () => {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? "bg-[#384959]/95 backdrop-blur-xl border-b border-[#6A89A7]/30 shadow-lg shadow-[#6A89A7]/20"
-            : "bg-gradient-to-r from-[#384959]/90 via-[#384959]/85 to-[#384959]/90 backdrop-blur-md border-b border-[#6A89A7]/20"
+            ? "bg-primary/95 backdrop-blur-xl border-b border-accent/30 shadow-lg shadow-accent/20"
+            : "bg-primary/10 backdrop-blur-md border-b border-accent/10"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -74,12 +74,12 @@ const Navbar = () => {
                   e.preventDefault();
                   scrollToSection("#home");
                 }}
-                className="relative text-2xl font-bold text-white hover:scale-110 transition-all duration-300"
+                 className="relative text-2xl font-bold text-white hover:scale-110 smooth-transition shimmer"
               >
-                <span className="relative z-10 bg-gradient-to-r from-[#88BDF2] via-[#BDDDFC] to-[#88BDF2] bg-clip-text text-transparent">
+                <span className="relative z-10 bg-gradient-to-r from-accent via-muted to-accent bg-clip-text text-transparent">
                   AD
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#88BDF2]/20 to-[#BDDDFC]/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-muted/20 blur-xl opacity-0 group-hover:opacity-100 smooth-transition" />
               </a>
             </div>
 
@@ -93,44 +93,44 @@ const Navbar = () => {
                     e.preventDefault();
                     scrollToSection(item.href);
                   }}
-                  className={`relative px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 group ${
-                    activeSection === item.href.substring(1)
-                      ? "text-white"
-                      : "text-[#BDDDFC] hover:text-white"
-                  }`}
-                >
-                  <span className="relative z-10">{item.name}</span>
-                  <span
-                    className={`absolute bottom-1 left-1/2 -translate-x-1/2 h-0.5 bg-gradient-to-r from-[#88BDF2] via-[#BDDDFC] to-[#88BDF2] transition-all duration-300 rounded-full ${
-                      activeSection === item.href.substring(1)
-                        ? "w-3/4 shadow-lg shadow-[#88BDF2]/50"
-                        : "w-0 group-hover:w-3/4 group-hover:shadow-lg group-hover:shadow-[#88BDF2]/30"
-                    }`}
-                  />
-                  {activeSection === item.href.substring(1) && (
-                    <span className="absolute inset-0 bg-gradient-to-r from-[#6A89A7]/30 to-[#88BDF2]/20 rounded-xl -z-10 animate-pulse" />
-                  )}
-                  <div className="absolute inset-0 bg-white/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
+                   className={`relative px-5 py-2.5 rounded-xl text-sm font-medium smooth-transition group ${
+                     activeSection === item.href.substring(1)
+                       ? "text-white"
+                       : "text-muted hover:text-white"
+                   }`}
+                 >
+                   <span className="relative z-10">{item.name}</span>
+                   <span
+                     className={`absolute bottom-1 left-1/2 -translate-x-1/2 h-0.5 bg-gradient-to-r from-accent via-muted to-accent smooth-transition rounded-full ${
+                       activeSection === item.href.substring(1)
+                         ? "w-3/4 shadow-lg shadow-accent/50"
+                         : "w-0 group-hover:w-3/4 group-hover:shadow-lg group-hover:shadow-accent/30"
+                     }`}
+                   />
+                   {activeSection === item.href.substring(1) && (
+                     <span className="absolute inset-0 bg-gradient-to-r from-secondary/30 to-accent/20 rounded-xl -z-10 animate-pulse" />
+                   )}
+                   <div className="absolute inset-0 bg-white/5 rounded-xl opacity-0 group-hover:opacity-100 smooth-transition -z-10" />
                 </a>
               ))}
             </div>
 
             {/* Resume Button - Desktop */}
             <div className="hidden md:block">
-              <Button
-                variant="hero"
-                size="sm"
-                asChild
-                className="relative overflow-hidden group bg-gradient-to-r from-[#88BDF2] to-[#6A89A7] hover:from-[#BDDDFC] hover:to-[#88BDF2] border-0 shadow-lg shadow-[#88BDF2]/30 hover:shadow-[#BDDDFC]/40 text-[#384959] font-semibold"
-              >
-                <a href="/Aniket_Dalvi_Resume.pdf" download>
-                  <span className="relative z-10 flex items-center gap-2">
-                    <Download className="h-4 w-4" />
-                    Resume
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-                </a>
-              </Button>
+               <Button
+                 variant="hero"
+                 size="sm"
+                 asChild
+                 className="relative overflow-hidden group bg-gradient-to-r from-accent to-secondary hover:from-muted hover:to-accent border-0 shadow-lg shadow-accent/30 hover:shadow-muted/40 text-primary font-semibold shimmer"
+               >
+                 <a href="/Aniket_Dalvi_Resume.pdf" download>
+                   <span className="relative z-10 flex items-center gap-2">
+                     <Download className="h-4 w-4" />
+                     Resume
+                   </span>
+                   <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                 </a>
+               </Button>
             </div>
 
             {/* Mobile menu button */}
@@ -157,7 +157,7 @@ const Navbar = () => {
             isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="px-4 pt-2 pb-6 space-y-2 bg-[#384959]/98 backdrop-blur-xl border-b border-[#6A89A7]/30">
+          <div className="px-4 pt-2 pb-6 space-y-2 bg-primary/98 backdrop-blur-xl border-b border-accent/30">
             {navItems.map((item, index) => (
               <a
                 key={item.name}
@@ -166,27 +166,27 @@ const Navbar = () => {
                   e.preventDefault();
                   scrollToSection(item.href);
                 }}
-                className={`block px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 animate-fade-in ${
-                  activeSection === item.href.substring(1)
-                    ? "bg-gradient-to-r from-[#6A89A7]/40 to-[#88BDF2]/30 text-white border border-[#88BDF2]/40 shadow-lg shadow-[#88BDF2]/20"
-                    : "text-[#BDDDFC] hover:bg-white/10 hover:text-white"
-                }`}
+                 className={`block px-4 py-3 rounded-xl text-sm font-medium smooth-transition animate-fade-in ${
+                   activeSection === item.href.substring(1)
+                     ? "bg-gradient-to-r from-secondary/40 to-accent/30 text-white border border-accent/40 shadow-lg shadow-accent/20"
+                     : "text-muted hover:bg-white/10 hover:text-white"
+                 }`}
                 style={{ animationDelay: `${index * 50}ms` }}
               >
                 {item.name}
               </a>
             ))}
-            <Button
-              variant="hero"
-              size="sm"
-              asChild
-              className="w-full mt-4 bg-gradient-to-r from-[#88BDF2] to-[#6A89A7] hover:from-[#BDDDFC] hover:to-[#88BDF2] border-0 shadow-lg shadow-[#88BDF2]/30 text-[#384959] font-semibold"
-            >
-              <a href="/Aniket_Dalvi_Resume.pdf" download>
-                <Download className="h-4 w-4 mr-2" />
-                Download Resume
-              </a>
-            </Button>
+             <Button
+               variant="hero"
+               size="sm"
+               asChild
+               className="w-full mt-4 bg-gradient-to-r from-accent to-secondary hover:from-muted hover:to-accent border-0 shadow-lg shadow-accent/30 text-primary font-semibold"
+             >
+               <a href="/Aniket_Dalvi_Resume.pdf" download>
+                 <Download className="h-4 w-4 mr-2" />
+                 Download Resume
+               </a>
+             </Button>
           </div>
         </div>
       </nav>
