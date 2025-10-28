@@ -60,8 +60,8 @@ const Navbar = () => {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? "bg-primary/95 backdrop-blur-xl border-b border-accent/30 shadow-lg shadow-accent/20"
-            : "bg-primary/10 backdrop-blur-md border-b border-accent/10"
+            ? "bg-primary/95 backdrop-blur-xl border-b border-accent/30 shadow-lg shadow-primary/40"
+            : "bg-gradient-to-r from-primary/80 via-primary/75 to-secondary/80 backdrop-blur-lg border-b border-accent/20 shadow-md shadow-primary/20"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -96,7 +96,7 @@ const Navbar = () => {
                    className={`relative px-5 py-2.5 rounded-xl text-sm font-medium smooth-transition group ${
                      activeSection === item.href.substring(1)
                        ? "text-white"
-                       : "text-muted hover:text-white"
+                       : "text-white/90 hover:text-white"
                    }`}
                  >
                    <span className="relative z-10">{item.name}</span>
@@ -121,7 +121,7 @@ const Navbar = () => {
                  variant="hero"
                  size="sm"
                  asChild
-                 className="relative overflow-hidden group bg-gradient-to-r from-accent to-secondary hover:from-muted hover:to-accent border-0 shadow-lg shadow-accent/30 hover:shadow-muted/40 text-primary font-semibold shimmer"
+                 className="relative overflow-hidden group bg-gradient-to-r from-accent to-muted hover:from-muted hover:to-accent border-0 shadow-lg shadow-accent/40 hover:shadow-muted/50 text-primary font-semibold shimmer"
                >
                  <a href="/Aniket_Dalvi_Resume.pdf" download>
                    <span className="relative z-10 flex items-center gap-2">
@@ -169,7 +169,7 @@ const Navbar = () => {
                  className={`block px-4 py-3 rounded-xl text-sm font-medium smooth-transition animate-fade-in ${
                    activeSection === item.href.substring(1)
                      ? "bg-gradient-to-r from-secondary/40 to-accent/30 text-white border border-accent/40 shadow-lg shadow-accent/20"
-                     : "text-muted hover:bg-white/10 hover:text-white"
+                     : "text-white/90 hover:bg-white/10 hover:text-white"
                  }`}
                 style={{ animationDelay: `${index * 50}ms` }}
               >
@@ -180,7 +180,7 @@ const Navbar = () => {
                variant="hero"
                size="sm"
                asChild
-               className="w-full mt-4 bg-gradient-to-r from-accent to-secondary hover:from-muted hover:to-accent border-0 shadow-lg shadow-accent/30 text-primary font-semibold"
+               className="w-full mt-4 bg-gradient-to-r from-accent to-muted hover:from-muted hover:to-accent border-0 shadow-lg shadow-accent/40 text-primary font-semibold"
              >
                <a href="/Aniket_Dalvi_Resume.pdf" download>
                  <Download className="h-4 w-4 mr-2" />
