@@ -5,11 +5,16 @@ import profileImage from "@/assets/aniket-profile.jpeg";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-secondary to-accent pt-20 md:pt-0">
-      {/* Animated Background Elements */}
+      {/* Animated Background Elements with Diagonal Light Animation */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-20 left-10 w-72 h-72 bg-muted rounded-full mix-blend-multiply filter blur-3xl animate-float" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{ animationDelay: "2s" }} />
         <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-secondary rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{ animationDelay: "4s" }} />
+      </div>
+      
+      {/* Diagonal Light Sweep Animation */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-white/10 via-transparent to-transparent rotate-12 animate-diagonal-sweep" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -17,17 +22,17 @@ const Hero = () => {
           {/* Text Content */}
           <div className="space-y-8 fade-in-up text-primary-foreground">
             <div className="space-y-4">
-              <div className="inline-block px-4 py-2 rounded-full bg-muted/20 backdrop-blur-sm border border-muted/30">
-                <p className="text-sm font-semibold tracking-wider uppercase text-muted">IT Infrastructure Expert</p>
+              <div className="inline-block px-4 py-2 rounded-full bg-muted/20 backdrop-blur-sm border border-muted/30 animate-scale-in">
+                <p className="text-sm font-semibold tracking-widest uppercase text-muted">IT Infrastructure Expert</p>
               </div>
               
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight animate-text-reveal">
                 Aniket Dalvi
               </h1>
               
-              <div className="h-1.5 w-28 bg-accent rounded-full" />
+              <div className="h-1.5 w-28 bg-accent rounded-full animate-expand-width" />
               
-              <p className="text-xl sm:text-2xl text-muted max-w-xl leading-relaxed">
+              <p className="text-xl sm:text-2xl text-muted max-w-xl leading-relaxed tracking-wide animate-text-reveal" style={{ animationDelay: "0.3s" }}>
                 Transforming complex IT infrastructures into secure, scalable, and high-performance solutions
               </p>
             </div>
@@ -37,7 +42,7 @@ const Hero = () => {
                 variant="premium" 
                 size="xl"
                 asChild
-                className="group"
+                className="group shadow-2xl shadow-accent/30 hover:shadow-accent/50 hover:shadow-3xl pulse-glow-button"
               >
                 <a href="/Aniket_Dalvi_Resume.pdf" download>
                   <Download className="group-hover:animate-bounce" />
@@ -48,6 +53,7 @@ const Hero = () => {
                 variant="hero" 
                 size="xl"
                 asChild
+                className="shadow-xl shadow-accent/20 hover:shadow-accent/40 hover:shadow-2xl"
               >
                 <a href="#contact">
                   <Mail />
@@ -59,29 +65,29 @@ const Hero = () => {
             {/* Stats Grid */}
             <div className="grid grid-cols-3 gap-3 sm:gap-6 pt-8">
               <div className="relative group">
-                <div className="absolute inset-0 bg-accent/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
-                <div className="relative bg-card/10 backdrop-blur-sm border border-muted/20 rounded-2xl p-3 sm:p-4 hover:border-accent/50 transition-all">
-                  <Award className="w-5 h-5 sm:w-6 sm:h-6 text-accent mb-2" />
+                <div className="absolute inset-0 bg-accent/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                <div className="relative bg-card/10 backdrop-blur-sm border border-muted/20 rounded-2xl p-3 sm:p-4 hover:border-accent/50 hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-accent/20">
+                  <Award className="w-5 h-5 sm:w-6 sm:h-6 text-accent mb-2 group-hover:scale-110 transition-transform duration-300" />
                   <p className="text-2xl sm:text-3xl font-bold">5+</p>
-                  <p className="text-[10px] sm:text-xs text-muted">Years Exp.</p>
+                  <p className="text-[10px] sm:text-xs text-muted tracking-wide">Years Exp.</p>
                 </div>
               </div>
               
               <div className="relative group">
-                <div className="absolute inset-0 bg-accent/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
-                <div className="relative bg-card/10 backdrop-blur-sm border border-muted/20 rounded-2xl p-3 sm:p-4 hover:border-accent/50 transition-all">
-                  <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-accent mb-2" />
+                <div className="absolute inset-0 bg-accent/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                <div className="relative bg-card/10 backdrop-blur-sm border border-muted/20 rounded-2xl p-3 sm:p-4 hover:border-accent/50 hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-accent/20">
+                  <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-accent mb-2 group-hover:scale-110 transition-transform duration-300" />
                   <p className="text-2xl sm:text-3xl font-bold">30%</p>
-                  <p className="text-[10px] sm:text-xs text-muted">Less Downtime</p>
+                  <p className="text-[10px] sm:text-xs text-muted tracking-wide">Less Downtime</p>
                 </div>
               </div>
               
               <div className="relative group">
-                <div className="absolute inset-0 bg-accent/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
-                <div className="relative bg-card/10 backdrop-blur-sm border border-muted/20 rounded-2xl p-3 sm:p-4 hover:border-accent/50 transition-all">
-                  <Users className="w-5 h-5 sm:w-6 sm:h-6 text-accent mb-2" />
+                <div className="absolute inset-0 bg-accent/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                <div className="relative bg-card/10 backdrop-blur-sm border border-muted/20 rounded-2xl p-3 sm:p-4 hover:border-accent/50 hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-accent/20">
+                  <Users className="w-5 h-5 sm:w-6 sm:h-6 text-accent mb-2 group-hover:scale-110 transition-transform duration-300" />
                   <p className="text-2xl sm:text-3xl font-bold">100+</p>
-                  <p className="text-[10px] sm:text-xs text-muted">Systems</p>
+                  <p className="text-[10px] sm:text-xs text-muted tracking-wide">Systems</p>
                 </div>
               </div>
             </div>
@@ -90,15 +96,16 @@ const Hero = () => {
           {/* Smaller Profile Image */}
           <div className="relative fade-in-up flex justify-center lg:justify-end mt-8 lg:mt-0" style={{ animationDelay: "0.2s" }}>
             <div className="relative w-56 sm:w-72 lg:w-80 xl:w-96">
-              {/* Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-accent to-muted rounded-3xl blur-3xl opacity-40 animate-pulse" />
+              {/* Enhanced Glow Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-accent to-muted rounded-3xl blur-3xl opacity-50 animate-pulse-glow" />
               
-              {/* Image Container */}
-              <div className="relative rounded-3xl overflow-hidden border-4 border-muted/30 shadow-2xl backdrop-blur-sm">
+              {/* Image Container with Enhanced Shadow */}
+              <div className="relative rounded-3xl overflow-hidden border-4 border-muted/30 shadow-2xl backdrop-blur-sm hover:scale-105 transition-transform duration-500 hover:border-accent/50 hover:shadow-accent/30 hover:shadow-3xl">
                 <img 
                   src={profileImage} 
                   alt="Aniket Dalvi - IT Infrastructure Expert"
                   className="w-full h-auto object-cover"
+                  loading="lazy"
                 />
               </div>
 

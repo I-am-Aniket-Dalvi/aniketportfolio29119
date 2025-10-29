@@ -66,17 +66,17 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-muted/20">
+    <section id="contact" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto">
-        <div className="text-center mb-12 sm:mb-16 fade-in-up">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 gradient-text">Let's Connect</h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-accent to-muted rounded-full mx-auto mb-6" />
-          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto px-4">
+        <div className="text-center mb-16 sm:mb-20 fade-in-up">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 gradient-text tracking-tight">Let's Connect</h2>
+          <div className="h-1.5 w-28 bg-gradient-to-r from-accent to-muted rounded-full mx-auto mb-6 shadow-lg shadow-accent/30" />
+          <p className="text-lg sm:text-xl text-muted-foreground/80 max-w-3xl mx-auto px-4 font-medium tracking-wide">
             Ready to transform your IT infrastructure? Let's discuss how I can help
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 max-w-6xl mx-auto">
           {/* Contact Information */}
           <div className="space-y-8 fade-in-up">
             <div className="relative group">
@@ -123,7 +123,7 @@ const Contact = () => {
                           href={social.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`w-12 h-12 rounded-xl bg-gradient-to-br ${social.gradient} flex items-center justify-center hover:scale-110 smooth-transition shadow-lg`}
+                          className={`w-12 h-12 rounded-xl bg-gradient-to-br ${social.gradient} flex items-center justify-center hover:scale-125 smooth-transition shadow-lg hover:shadow-xl hover:shadow-accent/40 hover:rotate-6`}
                           aria-label={social.label}
                         >
                           <Icon className="w-5 h-5 text-white" />
@@ -164,19 +164,19 @@ const Contact = () => {
                 
                 <form onSubmit={handleSubmit} className="space-y-6 relative">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Name</Label>
+                    <Label htmlFor="name" className="text-sm font-semibold">Name</Label>
                     <Input
                       id="name"
                       placeholder="Your full name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       required
-                      className="border-2 border-accent/30 focus:border-accent bg-card/50 backdrop-blur-sm"
+                      className="border-2 border-accent/30 focus:border-accent focus:ring-2 focus:ring-accent/20 focus:shadow-lg focus:shadow-accent/10 bg-card/50 backdrop-blur-sm smooth-transition"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
+                    <Label htmlFor="email" className="text-sm font-semibold">Email</Label>
                     <Input
                       id="email"
                       type="email"
@@ -184,19 +184,19 @@ const Contact = () => {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       required
-                      className="border-2 border-accent/30 focus:border-accent bg-card/50 backdrop-blur-sm"
+                      className="border-2 border-accent/30 focus:border-accent focus:ring-2 focus:ring-accent/20 focus:shadow-lg focus:shadow-accent/10 bg-card/50 backdrop-blur-sm smooth-transition"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
+                    <Label htmlFor="message" className="text-sm font-semibold">Message</Label>
                     <Textarea
                       id="message"
                       placeholder="Tell me about your project or requirements..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       required
-                      className="border-2 border-accent/30 focus:border-accent min-h-[150px] bg-card/50 backdrop-blur-sm"
+                      className="border-2 border-accent/30 focus:border-accent focus:ring-2 focus:ring-accent/20 focus:shadow-lg focus:shadow-accent/10 min-h-[150px] bg-card/50 backdrop-blur-sm smooth-transition"
                     />
                   </div>
 
@@ -204,7 +204,7 @@ const Contact = () => {
                     type="submit" 
                     variant="premium" 
                     size="lg" 
-                    className="w-full"
+                    className="w-full shadow-xl shadow-accent/30 hover:shadow-2xl hover:shadow-accent/50 pulse-glow-button"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (

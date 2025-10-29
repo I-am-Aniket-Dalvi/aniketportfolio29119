@@ -49,17 +49,17 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-muted/20">
+    <section id="skills" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto">
-        <div className="text-center mb-12 sm:mb-16 fade-in-up">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 gradient-text">Technical Expertise</h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-accent to-muted rounded-full mx-auto mb-6" />
-          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto px-4">
+        <div className="text-center mb-16 sm:mb-20 fade-in-up">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 gradient-text tracking-tight">Technical Expertise</h2>
+          <div className="h-1.5 w-28 bg-gradient-to-r from-accent to-muted rounded-full mx-auto mb-6 shadow-lg shadow-accent/30" />
+          <p className="text-lg sm:text-xl text-muted-foreground/80 max-w-3xl mx-auto px-4 font-medium tracking-wide">
             Comprehensive skill set spanning infrastructure, security, cloud, and enterprise solutions
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {skillCategories.map((category, index) => {
             const Icon = category.icon;
             const decorPosition = category.position === "top-right" ? "top-0 right-0 rounded-bl-[100px]" :
@@ -69,22 +69,22 @@ const Skills = () => {
             
             return (
               <div key={index} className="relative group">
-                <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-20 rounded-3xl blur-xl group-hover:blur-2xl transition-all`} />
+                <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500`} />
                 
                 <Card 
-                  className="relative p-6 border-2 border-accent/30 hover:border-accent/60 smooth-transition hover:shadow-xl bg-card/50 backdrop-blur-sm overflow-hidden fade-in-up"
+                  className="relative p-6 lg:p-7 border-2 border-accent/30 hover:border-accent/60 hover:scale-105 smooth-transition hover:shadow-xl hover:shadow-accent/20 bg-card/50 backdrop-blur-sm overflow-hidden fade-in-up"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {/* Decorative Element */}
-                  <div className={`absolute ${decorPosition} w-32 h-32 bg-gradient-to-br ${category.gradient} opacity-10`} />
+                  <div className={`absolute ${decorPosition} w-32 h-32 bg-gradient-to-br ${category.gradient} opacity-10 group-hover:opacity-20 transition-opacity duration-500`} />
 
                   {/* Icon Header */}
-                  <div className={`relative w-16 h-16 rounded-2xl bg-gradient-to-br ${category.gradient} flex items-center justify-center mb-4 group-hover:scale-110 smooth-transition shadow-lg`}>
+                  <div className={`relative w-16 h-16 rounded-2xl bg-gradient-to-br ${category.gradient} flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-3 smooth-transition shadow-lg`}>
                     <Icon className="w-8 h-8 text-white" />
                   </div>
 
                   {/* Category Title */}
-                  <h3 className="text-xl font-bold mb-4 text-foreground relative">{category.category}</h3>
+                  <h3 className="text-xl font-bold mb-4 text-foreground relative tracking-tight">{category.category}</h3>
 
                   {/* Skills Badges */}
                   <div className="flex flex-wrap gap-2 relative">
@@ -92,7 +92,7 @@ const Skills = () => {
                       <Badge 
                         key={skillIndex}
                         variant="secondary"
-                        className="text-xs smooth-transition hover:bg-accent hover:text-white cursor-default border border-accent/20"
+                        className="text-xs smooth-transition hover:bg-accent hover:text-white hover:scale-105 cursor-default border border-accent/20 hover:border-accent/50 hover:shadow-md"
                       >
                         {skill}
                       </Badge>

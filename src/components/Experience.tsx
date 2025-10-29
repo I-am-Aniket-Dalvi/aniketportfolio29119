@@ -68,43 +68,43 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-background">
+    <section id="experience" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="container mx-auto">
-        <div className="text-center mb-12 sm:mb-16 fade-in-up">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 gradient-text">Professional Experience</h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-accent to-muted rounded-full mx-auto mb-6" />
-          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto px-4">
+        <div className="text-center mb-16 sm:mb-20 fade-in-up">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 gradient-text tracking-tight">Professional Experience</h2>
+          <div className="h-1.5 w-28 bg-gradient-to-r from-accent to-muted rounded-full mx-auto mb-6 shadow-lg shadow-accent/30" />
+          <p className="text-lg sm:text-xl text-muted-foreground/80 max-w-3xl mx-auto px-4 font-medium tracking-wide">
             Proven track record of delivering enterprise-level IT solutions
           </p>
         </div>
 
-        <div className="space-y-8 max-w-5xl mx-auto">
+        <div className="space-y-8 lg:space-y-10 max-w-5xl mx-auto">
           {experiences.map((exp, index) => (
             <div key={index} className="relative group">
-              <div className={`absolute inset-0 bg-gradient-to-br ${exp.gradient} opacity-20 rounded-3xl blur-xl group-hover:blur-2xl transition-all`} />
+              <div className={`absolute inset-0 bg-gradient-to-br ${exp.gradient} opacity-20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500`} />
               
               <Card 
-                className="relative p-8 border-2 border-accent/30 hover:border-accent/60 smooth-transition hover:shadow-2xl bg-card/50 backdrop-blur-sm overflow-hidden fade-in-up"
+                className="relative p-8 lg:p-10 border-2 border-accent/30 hover:border-accent/60 hover:scale-[1.01] smooth-transition hover:shadow-2xl hover:shadow-accent/20 bg-card/50 backdrop-blur-sm overflow-hidden fade-in-up"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 {/* Decorative Corner */}
-                <div className={`absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl ${exp.gradient} opacity-10 rounded-bl-[150px]`} />
+                <div className={`absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl ${exp.gradient} opacity-10 rounded-bl-[150px] group-hover:opacity-20 transition-opacity duration-500`} />
                 
                 {/* Header */}
                 <div className="relative flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
                   <div className="space-y-2">
-                    <h3 className="text-2xl font-bold text-foreground">{exp.role}</h3>
+                    <h3 className="text-2xl lg:text-3xl font-bold text-foreground tracking-tight">{exp.role}</h3>
                     <div className="flex items-center gap-2 text-muted-foreground">
                       <Building2 className="w-4 h-4" />
                       <span className="font-medium">{exp.company}</span>
                     </div>
                   </div>
                   <div className="flex flex-col sm:items-end gap-2">
-                    <Badge variant="secondary" className="w-fit border border-accent/30">
+                    <Badge variant="secondary" className="w-fit border border-accent/30 hover:border-accent/50 hover:scale-105 smooth-transition">
                       <Calendar className="w-3 h-3 mr-1" />
                       {exp.period}
                     </Badge>
-                    <Badge className="w-fit bg-accent/20 text-primary hover:bg-accent/30 border border-accent/40">
+                    <Badge className="w-fit bg-accent/20 text-primary hover:bg-accent/30 hover:scale-105 border border-accent/40 smooth-transition">
                       {exp.type}
                     </Badge>
                   </div>
