@@ -1,8 +1,10 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Monitor, Network, Shield, Cloud, Database, Wrench } from "lucide-react";
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
 const Skills = () => {
+  const { ref, isVisible } = useIntersectionObserver({ threshold: 0.1 });
   const skillCategories = [
     {
       icon: Monitor,
@@ -49,8 +51,14 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-muted/20">
-      <div className="container mx-auto">
+    <section id="skills" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-muted/20 relative overflow-hidden">
+      {/* Decorative Background */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+        <div className="absolute top-40 right-20 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-40 left-20 w-80 h-80 bg-secondary/5 rounded-full blur-3xl" />
+      </div>
+      
+      <div ref={ref} className="container mx-auto relative z-10">
         <div className="text-center mb-16 sm:mb-20 fade-in-up">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 gradient-text tracking-tight">Technical Expertise</h2>
           <div className="h-1.5 w-28 bg-gradient-to-r from-accent to-muted rounded-full mx-auto mb-6 shadow-lg shadow-accent/30" />
@@ -72,8 +80,8 @@ const Skills = () => {
                 <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500`} />
                 
                 <Card 
-                  className="relative p-6 lg:p-7 border-2 border-accent/30 hover:border-accent/60 hover:scale-105 smooth-transition hover:shadow-xl hover:shadow-accent/20 bg-card/50 backdrop-blur-sm overflow-hidden fade-in-up"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  className={`relative p-6 lg:p-7 border-2 border-accent/30 hover:border-accent/60 hover:scale-105 smooth-transition hover:shadow-xl hover:shadow-accent/20 bg-card/50 backdrop-blur-sm overflow-hidden card-depth tilt-hover will-change-transform scroll-fade-in ${isVisible ? 'visible' : ''}`}
+                  style={{ transitionDelay: `${index * 0.1}s` }}
                 >
                   {/* Decorative Element */}
                   <div className={`absolute ${decorPosition} w-32 h-32 bg-gradient-to-br ${category.gradient} opacity-10 group-hover:opacity-20 transition-opacity duration-500`} />
@@ -92,7 +100,7 @@ const Skills = () => {
                       <Badge 
                         key={skillIndex}
                         variant="secondary"
-                        className="text-xs smooth-transition hover:bg-accent hover:text-white hover:scale-105 cursor-default border border-accent/20 hover:border-accent/50 hover:shadow-md"
+                        className="text-xs smooth-transition hover:bg-accent hover:text-white hover:scale-110 cursor-default border border-accent/20 hover:border-accent/50 hover:shadow-md tilt-hover will-change-transform"
                       >
                         {skill}
                       </Badge>

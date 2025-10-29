@@ -66,7 +66,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-muted/20">
+    <section id="contact" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-muted/20 wave-divider">
       <div className="container mx-auto">
         <div className="text-center mb-16 sm:mb-20 fade-in-up">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 gradient-text tracking-tight">Let's Connect</h2>
@@ -123,7 +123,7 @@ const Contact = () => {
                           href={social.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`w-12 h-12 rounded-xl bg-gradient-to-br ${social.gradient} flex items-center justify-center hover:scale-125 smooth-transition shadow-lg hover:shadow-xl hover:shadow-accent/40 hover:rotate-6`}
+                          className={`w-12 h-12 rounded-xl bg-gradient-to-br ${social.gradient} flex items-center justify-center hover:scale-125 smooth-transition shadow-lg hover:shadow-xl hover:shadow-accent/40 hover:rotate-6 tilt-hover focus-glow will-change-transform`}
                           aria-label={social.label}
                         >
                           <Icon className="w-5 h-5 text-white" />
@@ -171,7 +171,7 @@ const Contact = () => {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       required
-                      className="border-2 border-accent/30 focus:border-accent focus:ring-2 focus:ring-accent/20 focus:shadow-lg focus:shadow-accent/10 bg-card/50 backdrop-blur-sm smooth-transition"
+                      className="border-2 border-accent/30 focus:border-accent focus:ring-2 focus:ring-accent/20 focus:shadow-lg focus:shadow-accent/10 bg-card/50 backdrop-blur-sm smooth-transition focus-glow will-change-transform"
                     />
                   </div>
 
@@ -184,7 +184,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       required
-                      className="border-2 border-accent/30 focus:border-accent focus:ring-2 focus:ring-accent/20 focus:shadow-lg focus:shadow-accent/10 bg-card/50 backdrop-blur-sm smooth-transition"
+                      className="border-2 border-accent/30 focus:border-accent focus:ring-2 focus:ring-accent/20 focus:shadow-lg focus:shadow-accent/10 bg-card/50 backdrop-blur-sm smooth-transition focus-glow will-change-transform"
                     />
                   </div>
 
@@ -196,7 +196,7 @@ const Contact = () => {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       required
-                      className="border-2 border-accent/30 focus:border-accent focus:ring-2 focus:ring-accent/20 focus:shadow-lg focus:shadow-accent/10 min-h-[150px] bg-card/50 backdrop-blur-sm smooth-transition"
+                      className="border-2 border-accent/30 focus:border-accent focus:ring-2 focus:ring-accent/20 focus:shadow-lg focus:shadow-accent/10 min-h-[150px] bg-card/50 backdrop-blur-sm smooth-transition focus-glow will-change-transform"
                     />
                   </div>
 
@@ -204,7 +204,7 @@ const Contact = () => {
                     type="submit" 
                     variant="premium" 
                     size="lg" 
-                    className="w-full shadow-xl shadow-accent/30 hover:shadow-2xl hover:shadow-accent/50 pulse-glow-button"
+                    className="w-full shadow-xl shadow-accent/30 hover:shadow-2xl hover:shadow-accent/50 pulse-glow-button button-press ripple-effect"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (

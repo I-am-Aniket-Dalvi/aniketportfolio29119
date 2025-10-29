@@ -1,8 +1,10 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Building2, Calendar, TrendingUp, CheckCircle } from "lucide-react";
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
 const Experience = () => {
+  const { ref, isVisible } = useIntersectionObserver({ threshold: 0.1 });
   const experiences = [
     {
       role: "IT Manager",
@@ -68,8 +70,14 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-background">
-      <div className="container mx-auto">
+    <section id="experience" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-background relative overflow-hidden">
+      {/* Decorative Background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+      </div>
+      
+      <div ref={ref} className="container mx-auto relative z-10">
         <div className="text-center mb-16 sm:mb-20 fade-in-up">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 gradient-text tracking-tight">Professional Experience</h2>
           <div className="h-1.5 w-28 bg-gradient-to-r from-accent to-muted rounded-full mx-auto mb-6 shadow-lg shadow-accent/30" />
@@ -84,8 +92,8 @@ const Experience = () => {
               <div className={`absolute inset-0 bg-gradient-to-br ${exp.gradient} opacity-20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500`} />
               
               <Card 
-                className="relative p-8 lg:p-10 border-2 border-accent/30 hover:border-accent/60 hover:scale-[1.01] smooth-transition hover:shadow-2xl hover:shadow-accent/20 bg-card/50 backdrop-blur-sm overflow-hidden fade-in-up"
-                style={{ animationDelay: `${index * 0.2}s` }}
+                className={`relative p-8 lg:p-10 border-2 border-accent/30 hover:border-accent/60 hover:scale-[1.01] smooth-transition hover:shadow-2xl hover:shadow-accent/20 bg-card/50 backdrop-blur-sm overflow-hidden card-depth will-change-transform scroll-fade-in ${isVisible ? 'visible' : ''}`}
+                style={{ transitionDelay: `${index * 0.2}s` }}
               >
                 {/* Decorative Corner */}
                 <div className={`absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl ${exp.gradient} opacity-10 rounded-bl-[150px] group-hover:opacity-20 transition-opacity duration-500`} />
@@ -100,11 +108,11 @@ const Experience = () => {
                     </div>
                   </div>
                   <div className="flex flex-col sm:items-end gap-2">
-                    <Badge variant="secondary" className="w-fit border border-accent/30 hover:border-accent/50 hover:scale-105 smooth-transition">
+                    <Badge variant="secondary" className="w-fit border border-accent/30 hover:border-accent/50 hover:scale-110 smooth-transition tilt-hover will-change-transform">
                       <Calendar className="w-3 h-3 mr-1" />
                       {exp.period}
                     </Badge>
-                    <Badge className="w-fit bg-accent/20 text-primary hover:bg-accent/30 hover:scale-105 border border-accent/40 smooth-transition">
+                    <Badge className="w-fit bg-accent/20 text-primary hover:bg-accent/30 hover:scale-110 border border-accent/40 smooth-transition tilt-hover will-change-transform">
                       {exp.type}
                     </Badge>
                   </div>

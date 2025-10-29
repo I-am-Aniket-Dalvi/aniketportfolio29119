@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 will-change-transform-opacity",
   {
     variants: {
       variant: {
@@ -15,8 +15,8 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-accent text-primary hover:bg-accent/80 hover:shadow-lg hover:shadow-accent/40 hover:scale-105 font-semibold smooth-transition",
-        premium: "bg-gradient-to-r from-accent to-muted text-primary hover:from-muted hover:to-accent hover:shadow-xl hover:shadow-accent/50 hover:scale-105 font-semibold smooth-transition relative overflow-hidden",
+        hero: "bg-accent text-primary hover:bg-accent/80 hover:shadow-lg hover:shadow-accent/40 hover:scale-[1.03] font-semibold smooth-transition active:scale-95",
+        premium: "bg-gradient-to-r from-accent to-muted text-primary hover:from-muted hover:to-accent hover:shadow-xl hover:shadow-accent/50 hover:scale-[1.03] font-semibold smooth-transition relative overflow-hidden active:scale-95",
       },
       size: {
         default: "h-10 px-4 py-2",

@@ -93,9 +93,9 @@ const Navbar = () => {
                     e.preventDefault();
                     scrollToSection(item.href);
                   }}
-                   className={`relative px-5 py-2.5 rounded-xl text-sm font-medium smooth-transition group ${
+                 className={`relative px-5 py-2.5 rounded-xl text-sm font-medium smooth-transition group nav-link-hover focus-glow will-change-transform ${
                      activeSection === item.href.substring(1)
-                       ? "text-white"
+                       ? "text-white active"
                        : "text-white/90 hover:text-white"
                    }`}
                  >
@@ -121,7 +121,7 @@ const Navbar = () => {
                  variant="hero"
                  size="sm"
                  asChild
-                 className="relative overflow-hidden group bg-gradient-to-r from-accent to-muted hover:from-muted hover:to-accent border-0 shadow-lg shadow-accent/40 hover:shadow-muted/50 text-primary font-semibold shimmer"
+                 className="relative overflow-hidden group bg-gradient-to-r from-accent to-muted hover:from-muted hover:to-accent border-0 shadow-lg shadow-accent/40 hover:shadow-muted/50 text-primary font-semibold shimmer button-press ripple-effect focus-glow"
                >
                  <a href="/Aniket_Dalvi_Resume.pdf" download>
                    <span className="relative z-10 flex items-center gap-2">
@@ -166,9 +166,9 @@ const Navbar = () => {
                   e.preventDefault();
                   scrollToSection(item.href);
                 }}
-                 className={`block px-4 py-3 rounded-xl text-sm font-medium smooth-transition animate-fade-in ${
+                className={`block px-4 py-3 rounded-xl text-sm font-medium smooth-transition animate-fade-in nav-link-hover focus-glow ${
                    activeSection === item.href.substring(1)
-                     ? "bg-gradient-to-r from-secondary/40 to-accent/30 text-white border border-accent/40 shadow-lg shadow-accent/20"
+                     ? "bg-gradient-to-r from-secondary/40 to-accent/30 text-white border border-accent/40 shadow-lg shadow-accent/20 active"
                      : "text-white/90 hover:bg-white/10 hover:text-white"
                  }`}
                 style={{ animationDelay: `${index * 50}ms` }}
@@ -177,11 +177,11 @@ const Navbar = () => {
               </a>
             ))}
              <Button
-               variant="hero"
-               size="sm"
-               asChild
-               className="w-full mt-4 bg-gradient-to-r from-accent to-muted hover:from-muted hover:to-accent border-0 shadow-lg shadow-accent/40 text-primary font-semibold"
-             >
+                variant="hero"
+                size="sm"
+                asChild
+                className="w-full mt-4 bg-gradient-to-r from-accent to-muted hover:from-muted hover:to-accent border-0 shadow-lg shadow-accent/40 text-primary font-semibold button-press ripple-effect"
+              >
                <a href="/Aniket_Dalvi_Resume.pdf" download>
                  <Download className="h-4 w-4 mr-2" />
                  Download Resume

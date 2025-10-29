@@ -1,12 +1,27 @@
 import { Button } from "@/components/ui/button";
 import { Download, Mail, Award, Users, TrendingUp } from "lucide-react";
 import profileImage from "@/assets/aniket-profile.jpeg";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-secondary to-accent pt-20 md:pt-0">
-      {/* Animated Background Elements with Diagonal Light Animation */}
-      <div className="absolute inset-0 opacity-30">
+      {/* Animated Background Elements with Parallax Effect */}
+      <div 
+        className="absolute inset-0 opacity-30 parallax-container will-change-transform"
+        style={{ transform: `translateY(${scrollY * 0.5}px)` }}
+      >
         <div className="absolute top-20 left-10 w-72 h-72 bg-muted rounded-full mix-blend-multiply filter blur-3xl animate-float" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{ animationDelay: "2s" }} />
         <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-secondary rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{ animationDelay: "4s" }} />
@@ -42,7 +57,7 @@ const Hero = () => {
                 variant="premium" 
                 size="xl"
                 asChild
-                className="group shadow-2xl shadow-accent/30 hover:shadow-accent/50 hover:shadow-3xl pulse-glow-button"
+                className="group shadow-2xl shadow-accent/30 hover:shadow-accent/50 hover:shadow-3xl pulse-glow-button ripple-effect button-press"
               >
                 <a href="/Aniket_Dalvi_Resume.pdf" download>
                   <Download className="group-hover:animate-bounce" />
@@ -53,7 +68,7 @@ const Hero = () => {
                 variant="hero" 
                 size="xl"
                 asChild
-                className="shadow-xl shadow-accent/20 hover:shadow-accent/40 hover:shadow-2xl"
+                className="shadow-xl shadow-accent/20 hover:shadow-accent/40 hover:shadow-2xl ripple-effect button-press"
               >
                 <a href="#contact">
                   <Mail />
@@ -99,8 +114,8 @@ const Hero = () => {
               {/* Enhanced Glow Effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-accent to-muted rounded-3xl blur-3xl opacity-50 animate-pulse-glow" />
               
-              {/* Image Container with Enhanced Shadow */}
-              <div className="relative rounded-3xl overflow-hidden border-4 border-muted/30 shadow-2xl backdrop-blur-sm hover:scale-105 transition-transform duration-500 hover:border-accent/50 hover:shadow-accent/30 hover:shadow-3xl">
+              {/* Image Container with Enhanced Shadow and Tilt */}
+              <div className="relative rounded-3xl overflow-hidden border-4 border-muted/30 shadow-2xl backdrop-blur-sm hover:scale-105 tilt-hover transition-all duration-500 hover:border-accent/50 hover:shadow-accent/30 hover:shadow-3xl will-change-transform">
                 <img 
                   src={profileImage} 
                   alt="Aniket Dalvi - IT Infrastructure Expert"
