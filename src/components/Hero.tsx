@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Download, Mail, Award, Users, TrendingUp } from "lucide-react";
-import profileImage from "@/assets/aniket-profile.jpeg";
+import profileImage from "@/assets/aniket-profile.png";
 import { useEffect, useState } from "react";
 
 const Hero = () => {
